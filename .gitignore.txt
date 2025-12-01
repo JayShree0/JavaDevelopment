@@ -1,0 +1,33 @@
+# IntelliJ / IDEA
+/.idea/
+*.iml
+
+# Build folders
+/out/
+target/
+build/
+
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Gradle / Maven
+.gradle/
+.gradle-cache/
+.gradle/*
+/mvnw
+/mvnw.cmd
+/.mvn/
+
+# Tomcat / local server
+apache-tomcat-*/
+
+# Logs and OS files
+*.log
+.DS_Store
+Thumbs.db
+
+# Archives (optional)
+*.zip
