@@ -2,6 +2,7 @@ import java.sql.*;
 
 public class ScrollsensitiveDemoConcurReadOnly {
 
+
     /*
      * Steps to perform JDBC operations:
      * 1. Load the driver class.
@@ -12,46 +13,55 @@ public class ScrollsensitiveDemoConcurReadOnly {
      * 6. Close the connection.
      */
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    /*
+    * To see live updated data from the database while your program is running,
+    * you must re-execute the query because MySQL does not support TYPE_SCROLL_SENSITIVE.
+    * */
+
+    public static void main(String[] args) {
         try {
-            // Step 1: Load MySQL JDBC driver
+            // Load MySQL JDBC Driver
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            // Step 2: Establish connection to the database
+            // Create a connection to the database
             Connection con = DriverManager.getConnection(
                     "jdbc:mysql://localhost:3306/mystd", "root", "r6JQT427@");
 
-            // Step 3: Create a statement object to execute SQL queries
-            Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
-                                            ResultSet.CONCUR_READ_ONLY);
+            // Statement object to execute SQL queries
+            Statement st = con.createStatement();
 
-            // Step 4: Write SQL query
+            // SQL query to fetch all students
             String query = "SELECT * FROM student";
 
-            // Step 5: Execute the query and store the result
-            ResultSet res = statement.executeQuery(query);
+            System.out.println("🔄 Live DB Monitoring Started...\n");
 
-            System.out.println("Fetch data, in live update mode(changing while running)");
+            // Infinite loop to refresh data every few seconds
+            while (true) {
 
-            Thread.sleep(10000);
-            res.beforeFirst();
+                // Execute query again → fetch fresh updated data
+                ResultSet rs = st.executeQuery(query);
 
-            // Step 6: Display the fetched data
-            System.out.println("----------- Read Data -----------");
-            while (res.next()) {
-                System.out.println(
-                        res.getInt("id") + " | " +
-                                res.getString("stdName") + " | " +
-                                res.getInt("age")
-                );
+                System.out.println("----------- Current Data -----------");
+
+                // Read each row from the latest ResultSet
+                while (rs.next()) {
+                    System.out.println(
+                            rs.getInt("id") + " | " +
+                                    rs.getString("stdName") + " | " +
+                                    rs.getInt("age")
+                    );
+                }
+
+                System.out.println("------------------------------------\n");
+
+                // Close ResultSet before next refresh
+                rs.close();
+
+                // Wait 5 seconds before fetching data again
+                Thread.sleep(5000);
             }
 
-            // Step 7: Close connections
-            res.close();
-            statement.close();
-            con.close();
-        }
-        catch (Exception e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }

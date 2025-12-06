@@ -22,7 +22,7 @@ public class ScrollInsensitive {
                     "jdbc:mysql://localhost:3306/mystd", "root", "r6JQT427@");
 
             // Step 3: Create a statement object to execute SQL queries
-            Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE,
+            Statement statement = con.createStatement(ResultSet.TYPE_SCROLL_SENSITIVE,
                                             ResultSet.CONCUR_READ_ONLY);
 
             // Step 4: Write SQL query

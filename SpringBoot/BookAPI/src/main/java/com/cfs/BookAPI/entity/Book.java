@@ -2,28 +2,23 @@ package com.cfs.BookAPI.entity;
 
 public class Book {
 
-    private Long id;
+    private long id;
     private String title;
     private String author;
-    private Double price;
+    private double price;
 
-    public Book()
-    {
-
-    }
-
-    public Book(Long id, String title, String author, Double price) {
+    public Book(long id, String title, String author, double price) {
         this.id = id;
         this.title = title;
         this.author = author;
         this.price = price;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -43,13 +38,11 @@ public class Book {
         this.author = author;
     }
 
-    public Double getPrice() {
+    public double getPrice() {
         return price;
     }
 
-    public void setPrice(Double price) {
+    public void setPrice(double price) {
         this.price = price;
     }
-
-
 }

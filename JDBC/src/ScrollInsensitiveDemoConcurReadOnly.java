@@ -31,6 +31,7 @@ public class ScrollInsensitiveDemoConcurReadOnly {
             // Step 5: Execute the query and store the result
             ResultSet res = statement.executeQuery(query);
 
+
             System.out.println("Fetch data, in not live update mode(not changing while running)");
 
             Thread.sleep(10000);
