@@ -18,6 +18,9 @@ public class Customer {
 
     }
 
+    public Customer(String name, String phone) {
+    }
+
     // Getters & Setters
     public int getId() {
         return id;

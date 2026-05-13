@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 100">
+  <defs>
+    <!-- Sunny Icon -->
+    <symbol id="sunny" viewBox="0 0 100 100">
+      <circle cx="50" cy="50" r="20" fill="#FDB813"/>
+      <g stroke="#FDB813" stroke-width="3" stroke-linecap="round">
+        <line x1="50" y1="10" x2="50" y2="20"/>
+        <line x1="50" y1="80" x2="50" y2="90"/>
+        <line x1="10" y1="50" x2="20" y2="50"/>
+        <line x1="80" y1="50" x2="90" y2="50"/>
+        <line x1="21" y1="21" x2="28" y2="28"/>
+        <line x1="72" y1="72" x2="79" y2="79"/>
+        <line x1="21" y1="79" x2="28" y2="72"/>
+        <line x1="72" y1="28" x2="79" y2="21"/>
+      </g>
+    </symbol>
+    
+    <!-- Cloudy Icon -->
+    <symbol id="cloudy" viewBox="0 0 100 100">
+      <path d="M 25 55 Q 25 45 35 45 Q 35 35 45 35 Q 50 25 60 30 Q 70 30 75 40 Q 85 40 85 50 Q 85 60 75 60 L 35 60 Q 25 60 25 55 Z" 
+            fill="#E0E0E0" stroke="#B0B0B0" stroke-width="2"/>
+    </symbol>
+    
+    <!-- Partly Cloudy Icon -->
+    <symbol id="partly-cloudy" viewBox="0 0 100 100">
+      <circle cx="35" cy="35" r="15" fill="#FDB813"/>
+      <g stroke="#FDB813" stroke-width="2" stroke-linecap="round">
+        <line x1="35" y1="10" x2="35" y2="17"/>
+        <line x1="10" y1="35" x2="17" y2="35"/>
+        <line x1="15" y1="15" x2="20" y2="20"/>
+        <line x1="55" y1="15" x2="50" y2="20"/>
+      </g>
+      <path d="M 30 60 Q 30 52 38 52 Q 38 44 46 44 Q 50 38 58 42 Q 66 42 70 50 Q 78 50 78 58 Q 78 66 70 66 L 38 66 Q 30 66 30 60 Z" 
+            fill="#E0E0E0" stroke="#B0B0B0" stroke-width="2"/>
+    </symbol>
+    
+    <!-- Rainy Icon -->
+    <symbol id="rainy" viewBox="0 0 100 100">
+      <path d="M 25 45 Q 25 35 35 35 Q 35 25 45 25 Q 50 15 60 20 Q 70 20 75 30 Q 85 30 85 40 Q 85 50 75 50 L 35 50 Q 25 50 25 45 Z" 
+            fill="#B0B0B0" stroke="#808080" stroke-width="2"/>
+      <g stroke="#4A90E2" stroke-width="2" stroke-linecap="round">
+        <line x1="35" y1="55" x2="32" y2="65"/>
+        <line x1="45" y1="55" x2="42" y2="65"/>
+        <line x1="55" y1="55" x2="52" y2="65"/>
+        <line x1="65" y1="55" x2="62" y2="65"/>
+        <line x1="40" y1="60" x2="37" y2="70"/>
+        <line x1="50" y1="60" x2="47" y2="70"/>
+        <line x1="60" y1="60" x2="57" y2="70"/>
+      </g>
+    </symbol>
+  </defs>
+  
+  <!-- Display all icons -->
+  <use href="#sunny" x="0" y="0" width="100" height="100"/>
+  <use href="#cloudy" x="100" y="0" width="100" height="100"/>
+  <use href="#partly-cloudy" x="200" y="0" width="100" height="100"/>
+  <use href="#rainy" x="300" y="0" width="100" height="100"/>
+  
+  <!-- Labels -->
+  <text x="50" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Sunny</text>
+  <text x="150" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Cloudy</text>
+  <text x="250" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Partly Cloudy</text>
+  <text x="350" y="95" text-anchor="middle" font-family="Arial" font-size="10" fill="#333">Rainy</text>
+</svg>

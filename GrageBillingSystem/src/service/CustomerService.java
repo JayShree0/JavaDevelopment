@@ -88,4 +88,7 @@ public class CustomerService {
         return customer; // connection auto-closes when program ends
     }
 
+    public Customer getCustomersBasesOnNum(String phone) {
+        return null;
+    }
 }

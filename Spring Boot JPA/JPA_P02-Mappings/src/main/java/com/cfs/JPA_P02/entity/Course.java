@@ -1,22 +1,26 @@
 package com.cfs.JPA_P02.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
-
-import java.util.HashSet;
-import java.util.Set;
+import java.util.List;
 
 @Entity
-@Table(name = "courses")
 public class Course {
 
+    // Primary key of Course table
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    // Course name (Java, Spring, SQL etc.)
+    private String name;
 
-    @ManyToMany(mappedBy = "courses")
-    @JsonIgnoreProperties("courses")
-    private Set<Student> students = new HashSet<>();
+    /*
+     * Inverse side of Many-to-Many relationship
+     *
+     * mappedBy = "course"
+     * → mapping is controlled by Student entity
+     * → no join table defined here
+     */
+    @ManyToMany(mappedBy = "course")
+    private List<Student> students;
 }
